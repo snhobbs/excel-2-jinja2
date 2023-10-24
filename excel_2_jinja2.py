@@ -32,8 +32,7 @@ import click
 
 def main(source_f, template):
     sheet_names = pandas.ExcelFile(source_f).sheet_names
-    dfs = dict([[sheet.replace(" ", "_"), pandas.read_excel(source_f, sheet_name=sheet)] for sheet in sheet_names])
-
+    dfs = dict([sheet, pandas.read_excel(source_f, sheet_name=sheet)] for sheet in sheet_names])
     return template.render(**dfs)
 
 
