@@ -15,20 +15,20 @@ In general I like to use pandas DataFrames to render Jinja2 templatess.
 All info is typically held in the template.
 This tool takes a multipage spreadsheet and shoves it into a template.
 
-Inputs:
+## Inputs
     + Spreadsheet. Each page is a named variable. This is pumped into the template as a variable using kwargs. It is used by name by the template.
     + Template: Template worries about how to turn the data into something
     + Output name
 
 
-Process:
+## Process
     + openpyexcel loads all pages
     + Pandas dataframe from page
     + make dictionary of pages
     + render template
 
 
-Uses:
+## Uses
     Primarily make files. Use as a stand alone command line tool.
     The raison d'être is to script the generation of kicad schematics in a way I can think about.
 
